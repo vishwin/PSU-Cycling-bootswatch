@@ -1,0 +1,52 @@
+// Penn State Cycling 2.99.3.1
+// Bootstrap customisations
+
+// Import webfonts
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,100italic,300italic,400italic,500italic,700italic|Roboto+Condensed:300,400,700,300italic,400italic,700italic|Noto+Serif:400,700,400italic,700italic);
+
+// Typography
+.lead {
+	font-weight: 300;
+}
+dd {
+	margin-left: 10px;
+}
+
+// Navbar
+.navbar {
+	font-family: @navbar-font-family;
+}
+.navbar-brand {
+	padding: 0 @navbar-padding-horizontal;
+}
+.navbar-text {
+	color: @gray-light;
+}
+//// Responsive
+@media screen and (min-width: @grid-float-breakpoint) {
+	.navbar-nav {
+		> li {
+			.box-sizing(border-box);
+			border-left: 1px solid darken(@navbar-link-active-color, 55%);
+			> a {
+				padding-bottom: ((@navbar-height - @line-height-computed) / 2) - 5px;
+				border-bottom: 5px solid transparent;
+			}
+		}
+		> .active > a {
+			border-bottom: 5px solid @navbar-brand-hover-color;
+		}
+	}
+	.navbar-text {
+		padding-right: @navbar-padding-horizontal;
+	}
+}
+
+// Footer
+footer {
+	margin: 10px 0;
+	border-top: 5px solid @navbar-bg;
+	border-bottom: 5px solid @navbar-bg;
+	padding: @padding-small-vertical @padding-small-horizontal;
+	font-size: @font-size-small;
+}
