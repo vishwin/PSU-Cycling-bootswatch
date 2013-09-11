@@ -15,30 +15,46 @@ dd {
 // Navbar
 .navbar {
 	font-family: @navbar-font-family;
+	padding-left: 0;
 }
 .navbar-brand {
-	padding: 0 @navbar-padding-horizontal;
+	padding: 0 (@navbar-padding-horizontal / 2) 0 @navbar-padding-horizontal;
 }
 .navbar-text {
 	color: @gray-light;
 }
+.navbar-nav {
+	.box-sizing(border-box);
+	> li {
+		border-left: 5px solid transparent;
+		> a {
+			padding-left: (@navbar-padding-horizontal - 5px);
+		}
+	}
+	> .active {
+		border-left: 5px solid @navbar-brand-hover-color;
+	}
+}
 //// Responsive
 @media screen and (min-width: @grid-float-breakpoint) {
+	.navbar {
+		padding-left: @navbar-padding-horizontal;
+	}
 	.navbar-nav {
 		> li {
-			.box-sizing(border-box);
 			border-left: 1px solid darken(@navbar-link-active-color, 55%);
 			> a {
 				padding-bottom: ((@navbar-height - @line-height-computed) / 2) - 5px;
 				border-bottom: 5px solid transparent;
+				padding-left: @navbar-padding-horizontal;
 			}
 		}
-		> .active > a {
-			border-bottom: 5px solid @navbar-brand-hover-color;
+		> .active {
+			border-left: 1px solid darken(@navbar-link-active-color, 55%);
+			> a {
+				border-bottom: 5px solid @navbar-brand-hover-color;
+			}
 		}
-	}
-	.navbar-text {
-		padding-right: @navbar-padding-horizontal;
 	}
 }
 
@@ -47,6 +63,6 @@ footer {
 	margin: 10px 0;
 	border-top: 5px solid @navbar-bg;
 	border-bottom: 5px solid @navbar-bg;
-	padding: @padding-small-vertical @padding-small-horizontal;
+	padding: @padding-small-vertical @padding-small-vertical;
 	font-size: @font-size-small;
 }
