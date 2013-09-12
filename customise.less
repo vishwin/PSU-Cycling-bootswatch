@@ -41,12 +41,9 @@ dd {
 }
 //// Responsive
 @media screen and (min-width: @grid-float-breakpoint) {
-	.navbar {
-		padding-left: @navbar-padding-horizontal;
-	}
 	.navbar-nav {
 		> li {
-			border-left: 1px solid darken(@navbar-link-active-color, 55%);
+			border-left: 1px solid @thumbnail-border;
 			> a {
 				padding-bottom: ((@navbar-height - @line-height-computed) / 2) - 5px;
 				border-bottom: 5px solid transparent;
@@ -54,7 +51,7 @@ dd {
 			}
 		}
 		> .active {
-			border-left: 1px solid darken(@navbar-link-active-color, 55%);
+			border-left: 1px solid @thumbnail-border;
 			> a {
 				border-bottom: 5px solid @navbar-brand-hover-color;
 			}
@@ -69,4 +66,25 @@ footer {
 	border-bottom: 5px solid @navbar-bg;
 	padding: @padding-small-vertical @padding-small-vertical;
 	font-size: @font-size-small;
+}
+
+// Thumbnails
+.thumbnail .caption {
+	font-size: @font-size-small;
+}
+
+// List groups
+.list-group-item {
+	.box-sizing(border-box);
+	border: 1px solid @list-group-border;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	&.active,
+	&.active:hover,
+	&.active:focus {
+		border: 1px solid @list-group-border;
+		border-left: 1px solid transparent;
+		border-right: 5px solid @list-group-active-border;
+		padding-right: 10px;
+	}
 }
