@@ -28,7 +28,6 @@ dd {
 	color: @gray-light;
 }
 .navbar-nav {
-	.box-sizing(border-box);
 	> li {
 		border-left: 5px solid transparent;
 		> a {
@@ -36,7 +35,7 @@ dd {
 		}
 	}
 	> .active {
-		border-left: 5px solid @navbar-brand-hover-color;
+		border-left: 5px solid @navbar-default-brand-hover-color;
 	}
 }
 //// Responsive
@@ -53,7 +52,7 @@ dd {
 		> .active {
 			border-left: 1px solid @thumbnail-border;
 			> a {
-				border-bottom: 5px solid @navbar-brand-hover-color;
+				border-bottom: 5px solid @navbar-default-brand-hover-color;
 			}
 		}
 	}
@@ -62,8 +61,8 @@ dd {
 // Footer
 footer {
 	margin: 10px 0;
-	border-top: 5px solid @navbar-bg;
-	border-bottom: 5px solid @navbar-bg;
+	border-top: 5px solid @navbar-default-bg;
+	border-bottom: 5px solid @navbar-default-bg;
 	padding: @padding-small-vertical @padding-small-vertical;
 	font-size: @font-size-small;
 }
@@ -75,7 +74,6 @@ footer {
 
 // List groups
 .list-group-item {
-	.box-sizing(border-box);
 	border: 1px solid @list-group-border;
 	border-left-color: transparent;
 	border-right-color: transparent;
